@@ -1,0 +1,9 @@
+<h1>Gem</h1>
+<div class="row">
+  <% if logged_in? %>
+    Welcome to Gem Dispatch.
+  <% else %>
+    <%= link_to "Courier Log In", new_session_path, class: "btn btn-primary" %>
+    <%= link_to "Client Log In", "#", class: "btn btn-primary" %>
+  <% end %>
+</div>

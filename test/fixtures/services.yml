@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_name: MyString
+  service_baseprice: 1
+  service_notes: MyString
+  service_duetime: MyString
+
+two:
+  service_name: MyString
+  service_baseprice: 1
+  service_notes: MyString
+  service_duetime: MyString

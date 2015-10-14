@@ -1,0 +1,20 @@
+<div class="container">
+<h1>Edit Service</h1>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@service) do |form| %>
+
+    <%= form.label :service_name, "Service name:" %>
+    <%= form.text_field :service_name %>
+
+    <%= form.label :service_baseprice, "Base price:" %>
+    <%= form.text_field :service_baseprice %>
+
+    <%= form.label :service_notes, "Service notes:" %>
+    <%= form.text_area :service_notes %>
+
+    <%= form.submit "Edit service", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

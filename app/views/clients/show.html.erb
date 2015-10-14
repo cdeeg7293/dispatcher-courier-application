@@ -1,0 +1,30 @@
+<%= link_to "Add Client", new_client_path, class: "btn btn-primary" %>
+<%= link_to "Find Client", client_path(:id), class: "btn btn-primary" %>
+<h1>Clients</h1>
+<div class="container">
+<table>
+  <tr>
+    <th>Client name</th>
+    <th>Client address</th>
+    <th>Client floor</th>
+    <th>Client email</th>
+    <th>Client phone</th>
+    <th>Special instructions</th>
+  </tr>
+
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.client_name %></td>
+      <td><%= client.client_streetaddress %></td>
+      <td><%= client.client_floor %></td>
+      <td><%= client.client_email %></td>
+      <td><%= client.client_phone %></td>
+      <td><%= client.client_specialinstructions %></td>
+      <td><%= link_to "Edit", edit_client_path(client), class: "btn-xs btn-info" %>&nbsp;</td>
+      <td>|&nbsp;<%= link_to "Delete", client_path(client), class: "btn-xs btn-info",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+  <% end %>
+</table>
+</div>

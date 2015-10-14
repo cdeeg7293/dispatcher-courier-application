@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Edit Fee</h1>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@fee) do |form| %>
+
+    <%= form.label :fee_name, "Fee name:" %>
+    <%= form.text_field :fee_name %>
+
+    <%= form.label :fee_price, "Fee price:" %>
+    <%= form.text_field :fee_price %>
+
+    <%= form.label :fee_category, "Fee Category:" %> (for example : "overweight" charge)
+    <%= form.text_field :fee_category %>
+
+    <%= form.label :fee_notes, "Fee notes:" %>
+    <%= form.text_area :fee_notes %>
+
+    <%= form.submit "Edit Fee", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

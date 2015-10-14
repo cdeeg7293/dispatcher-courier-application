@@ -1,0 +1,30 @@
+<%= link_to "Add Job", new_job_path, class: "btn btn-primary" %>
+<%= link_to "Find Job", job_path(:id), class: "btn btn-primary" %>
+<h1>Jobs</h1>
+<div class="container">
+<table>
+  <tr>
+    <th>Client name</th>
+    <th>Service Level</th>
+    <th>Origin Address</th>
+    <th>Destination Address</th>
+    <th>Billing Reference</th>
+    <th>Special instructions</th>
+  </tr>
+
+  <% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.job_client %></td>
+      <td><%= job.job_servicelevel %></td>
+      <td><%= job.job_originaddress %></td>
+      <td><%= job.job_destinationaddress %></td>
+      <td><%= job.job_billingreference %></td>
+      <td><%= job.job_specialinstructions %></td>
+      <td><%= link_to "Edit", edit_job_path(job), class: "btn-xs btn-info" %>&nbsp;</td>
+      <td>|&nbsp;<%= link_to "Delete", job_path(job), class: "btn-xs btn-info",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+  <% end %>
+</table>
+</div>

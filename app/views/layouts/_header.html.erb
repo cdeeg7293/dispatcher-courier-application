@@ -1,0 +1,39 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Gem", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <% if logged_in? %>
+        <li><%= link_to "Board", boards_path %></li>
+        <li><%= link_to "Jobs", jobs_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Stuff <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Clients", clients_path %></li>
+              <li><%= link_to "Service levels", services_path %></li>
+              <li><%= link_to "Fees", fees_path %></li>
+              <li><%= link_to "CSV export", "#" %></li>
+            </ul>
+          </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= current_user.name %> <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", "#" %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log out", session_path(:id), method: "delete" %></li>
+          </li>
+        </ul>
+      </li>
+      <% else %>
+          <li><%= link_to "Sign up", new_user_path %></li>
+          <li><%= link_to "Log in", new_session_path %></li>
+     <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fee_name: MyString
+  fee_price: 9.99
+  fee_category: MyString
+  fee_notes: MyString
+
+two:
+  fee_name: MyString
+  fee_price: 9.99
+  fee_category: MyString
+  fee_notes: MyString

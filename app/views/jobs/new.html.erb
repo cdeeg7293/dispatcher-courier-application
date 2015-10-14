@@ -1,0 +1,55 @@
+<div class="container">
+<h1>Create Job</h1>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(@job) do |form| %>
+    <h3>Job Information</h3>
+
+    <%= form.label :job_client, "Client:" %>
+    <%= collection_select( :clients, :client_nameid, Client.all, :id, :client_name, {}, { :multiple => false}) %>
+
+    <%= form.label :job_originaddress, "Origin address:" %>
+    <%= form.text_field :job_originaddress %>
+
+    <%= form.label :job_destinationaddress, "Destination address:" %>
+    <%= form.text_field :job_destinationaddress %>
+
+    <%= form.label :job_servicelevel, "Service level:" %>
+    <%= collection_select( :services, :service_nameid, Service.all, :id, :service_name, {}, { :multiple => false}) %>
+
+    <%= form.label :job_paymenttype, "Payment type:" %>
+    <%= form.collection_select :job_paymenttype, Job::PAYMENTTYPES, :to_s, :to_s,
+              :include_blank => true %>
+
+    <%= form.label :job_billingreference, "Billing reference:" %>
+    <%= form.text_field :job_billingreference %>
+  </div>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Contact Information</h3>
+
+    <%= form.label :job_orderplacer, "Order placer:" %>
+    <%= form.text_field :job_orderplacer %>
+
+    <%= form.label :job_orderemail, "E-mail:" %>
+    <%= form.text_field :job_orderemail %>
+
+    <%= form.label :job_orderphone, "Phone number:" %>
+    <%= form.text_field :job_orderphone %>
+
+    <%= form.label :job_specialinstructions, "Special instructions:" %>
+    <%= form.text_area :job_specialinstructions %>
+  </div>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Date / Time Ready</h3>
+    <%= form.label :job_datetime, "Date / time:" %>
+    <%= form.datetime_select :job_datetime %>
+  </div>
+</div>
+<div class="container">
+<div class="col-sm-4">
+<%= form.submit "Create job", class: "btn btn-primary" %>
+</div>
+</div>
+<% end %>
