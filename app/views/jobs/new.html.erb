@@ -1,7 +1,7 @@
 <div class="container">
 <h1>Create Job</h1>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= form_for(@job) do |form| %>
     <h3>Job Information</h3>
 
@@ -25,7 +25,7 @@
     <%= form.text_field :job_billingreference %>
   </div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h3>Contact Information</h3>
 
     <%= form.label :job_orderplacer, "Order placer:" %>
@@ -41,15 +41,26 @@
     <%= form.text_area :job_specialinstructions %>
   </div>
 <div class="row">
-  <div class="col-md-4">
-    <h3>Date / Time Ready</h3>
-    <%= form.label :job_datetime, "Date / time:" %>
-    <%= form.datetime_select :job_datetime %>
+  <div class="col-sm-3">
+    <h3> Date \ Time Ready</h3>
+    <div class="form-group">
+    <%= label_tag :job_datetime, 'Date \ time ready:' %>
+    <div class="input-group date" id="datetimepicker">
+      <%= text_field_tag :job_datetime, nil, class: 'form-control', data: { date_format: 'YYYY/MM/DD hh:mm A' } %>
+      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div>
   </div>
 </div>
 <div class="container">
-<div class="col-sm-4">
+  <div class="col-sm-2">
 <%= form.submit "Create job", class: "btn btn-primary" %>
 </div>
 </div>
+<script>
+$(function() {
+  $('#datetimepicker').datetimepicker();
+});
+</script>
+
 <% end %>
