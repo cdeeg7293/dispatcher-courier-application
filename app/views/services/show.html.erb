@@ -12,7 +12,7 @@
   <% @services.each do |service| %>
     <tr>
       <td><%= service.service_name %></td>
-      <td>$<%= service.service_baseprice %>0</td>
+      <td><%= number_to_currency(service.service_baseprice) %></td>
       <td><%= service.service_duetime %></td>
       <td><%= service.service_notes %></td>
       <td><%= link_to "Edit", edit_service_path(service), class: "btn-xs btn-info" %>&nbsp;

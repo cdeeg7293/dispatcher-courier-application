@@ -28,7 +28,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.save
-    flash[:success] = "Account created!"
+    flash[:success] = "Job created!"
     redirect_to jobs_path
   end
 
