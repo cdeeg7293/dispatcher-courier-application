@@ -2,43 +2,44 @@
 <h1>Create Job</h1>
 <div class="row">
   <div class="col-md-3">
-    <%= form_for(@job) do |form| %>
+    <%= bootstrap_form_for(@job) do |form| %>
     <h3>Job Information</h3>
 
     <%= form.label :job_client, "Client:" %>
     <%= collection_select( :clients, :client_nameid, Client.all, :id, :client_name, {}, { :multiple => false}) %>
 
     <%= form.label :job_originaddress, "Origin address:" %>
-    <%= form.text_field :job_originaddress %>
+    <%= form.text_field :job_originaddress, hide_label: true %>
 
     <%= form.label :job_destinationaddress, "Destination address:" %>
-    <%= form.text_field :job_destinationaddress %>
+    <%= form.text_field :job_destinationaddress, hide_label: true %>
 
     <%= form.label :job_servicelevel, "Service level:" %>
     <%= collection_select( :services, :service_nameid, Service.all, :id, :service_name, {}, { :multiple => false}) %>
 
     <%= form.label :job_paymenttype, "Payment type:" %>
     <%= form.collection_select :job_paymenttype, Job::PAYMENTTYPES, :to_s, :to_s,
-              :include_blank => true %>
+              :include_blank => true,
+              hide_label: true %>
 
     <%= form.label :job_billingreference, "Billing reference:" %>
-    <%= form.text_field :job_billingreference %>
+    <%= form.text_field :job_billingreference, hide_label: true %>
   </div>
 <div class="row">
   <div class="col-md-3">
     <h3>Contact Information</h3>
 
     <%= form.label :job_orderplacer, "Order placer:" %>
-    <%= form.text_field :job_orderplacer %>
+    <%= form.text_field :job_orderplacer, hide_label: true %>
 
     <%= form.label :job_orderemail, "E-mail:" %>
-    <%= form.text_field :job_orderemail %>
+    <%= form.text_field :job_orderemail, hide_label: true %>
 
     <%= form.label :job_orderphone, "Phone number:" %>
-    <%= form.text_field :job_orderphone %>
+    <%= form.text_field :job_orderphone, hide_label: true %>
 
     <%= form.label :job_specialinstructions, "Special instructions:" %>
-    <%= form.text_area :job_specialinstructions %>
+    <%= form.text_area :job_specialinstructions, hide_label: true, style: "resize:none" %>
   </div>
 <div class="row">
   <div class="col-sm-3">
