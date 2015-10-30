@@ -12,7 +12,7 @@
   <% @fee.each do |fee| %>
     <tr>
       <td><%= fee.fee_name %></td>
-      <td>$<%= fee.fee_price %>0</td>
+      <td><%= number_to_currency(fee.fee_price) %></td>
       <td><%= fee.fee_category %></td>
       <td><%= fee.fee_notes %></td>
       <td><%= link_to "Edit", edit_fee_path(fee), class: "btn-xs btn-info" %>&nbsp;
