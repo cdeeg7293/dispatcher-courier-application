@@ -6,7 +6,7 @@
           <h3>Job Information</h3>
 
           <%= form.label :job_client, "Client:" %>
-          <%= collection_select( :clients, :client_nameid, Client.all, :id, :client_name, {}, { :multiple => false}) %>
+          <%= collection_select( :job, :job_client, Client.all, :client_name, :client_name, {}, { :multiple => false}) %>
 
           <%= form.label :job_originaddress, "Origin address:" %>
           <%= form.text_field :job_originaddress, hide_label: true %>
@@ -15,7 +15,7 @@
           <%= form.text_field :job_destinationaddress, hide_label: true %>
 
           <%= form.label :job_servicelevel, "Service level:" %>
-          <%= collection_select( :services, :service_nameid, Service.all, :id, :service_name, {}, { :multiple => false}) %>
+          <%= collection_select( :job, :job_servicelevel, Service.all, :service_name, :service_name, {}, { :multiple => false}) %>
 
           <%= form.label :job_paymenttype, "Payment type:" %>
           <%= form.collection_select :job_paymenttype, Job::PAYMENTTYPES, :to_s, :to_s,

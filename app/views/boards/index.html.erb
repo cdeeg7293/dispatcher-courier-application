@@ -9,9 +9,16 @@
       <th>Destination Address</th>
       <th>Service Level</th>
     </tr>
+    <% @jobs.each do |job| %>
     <tr>
-    
+    <td>
+      
+    </td>
+    <td><%= job.job_originaddress %></td>
+    <td><%= job.job_destinationaddress %></td>
+    <td><%= job.job_servicelevel %></td>
     </tr>
+    <% end %>
   </table>
 </div>
 </div>
